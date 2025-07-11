@@ -25,7 +25,7 @@ export function Chat() {
     if (scrollViewRef.current && messages && messages.length > 0) {
       setTimeout(() => {
         const ref = scrollViewRef.current;
-        if (ref && typeof ref.scrollTo === 'function') {
+        if (ref && typeof ref.scrollTo === "function") {
           ref.scrollTo({ y: 999999, animated: true });
         }
       }, 100);
@@ -41,26 +41,21 @@ export function Chat() {
       py={24}
       gap={"$3"}
     >
-        <UserButton />
+      <UserButton />
       {messages && messages.length > 0 ? (
-        <ScrollView
-          width="100%"
-          height="100%"
-          ref={scrollViewRef}
-        >
+        <ScrollView width="100%" height="100%" ref={scrollViewRef}>
           <YStack width="100%" gap="$2">
             {messages.map((message) => {
               return (
-        <ListItem
-  key={message._id}
-  width="75%"
-  ml={message.sender_type === 'client' ? 'auto' : 0}
-  // bg={message.sender_type === 'client' ? '$blue4' : '$gray2'}
-  p="$3"
-  // borderRadius="$4"
->
-  <Text>{message.content}</Text>
-</ListItem>
+                <ListItem
+                  key={message._id}
+                  width="75%"
+                  ml={message.sender_type === "client" ? "auto" : 0}
+                  background={message.sender_type === "client" ? "$blue4" : "$gray2"}
+                  p="$3"
+                >
+                  <Text>{message.content}</Text>
+                </ListItem>
               );
             })}
           </YStack>
