@@ -1,10 +1,10 @@
-import { XStack, YStack, Text, Button, Input } from "tamagui";
+import { XStack, YStack, Button, Input } from "tamagui";
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import { useState } from "react";
 import { useMutation } from "convex/react";
 
-function Chat() {
+export function Chat() {
   const messages = useQuery(api.myFunctions.getMessages);
   const sendMessage = useMutation(api.myFunctions.sendMessage);
   const [message, setMessage] = useState("");
@@ -58,5 +58,3 @@ function Chat() {
     </YStack>
   );
 }
-
-export default Chat;

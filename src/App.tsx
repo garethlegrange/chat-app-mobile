@@ -3,7 +3,7 @@ import { TamaguiProvider, createTamagui } from "@tamagui/core";
 import { defaultConfig } from "@tamagui/config/v4";
 import { XStack, YStack, Text, Button, H6 } from "tamagui";
 import { Authenticated, Unauthenticated } from "convex/react";
-import Chat from "./components/Chat";
+import { Chat } from "./components/Chat";
 
 // you usually export this from a tamagui.config.ts file
 const config = createTamagui(defaultConfig);
