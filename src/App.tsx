@@ -1,12 +1,4 @@
-import {
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  SignUpButton,
-  UserButton,
-  SignIn,
-  SignUp,
-} from "@clerk/clerk-react";
+import { SignInButton, SignUpButton, UserButton } from "@clerk/clerk-react";
 import { TamaguiProvider, createTamagui } from "@tamagui/core";
 import { defaultConfig } from "@tamagui/config/v4";
 import { XStack, YStack, Text, Button, H6, Input } from "tamagui";
@@ -29,11 +21,8 @@ declare module "@tamagui/core" {
 function App() {
   const messages = useQuery(api.myFunctions.getMessages);
   const sendMessage = useMutation(api.myFunctions.sendMessage);
-   const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("");
   const [isSending, setIsSending] = useState(false);
-
-  const [inputValue, setInputValue] = useState("");
-  const [submittedText, setSubmittedText] = useState<string | null>(null);
 
   return (
     <TamaguiProvider config={config}>
@@ -87,7 +76,7 @@ function App() {
             style={{ width: "100%" }}
             onSubmit={(e) => {
               e.preventDefault();
-              
+
               setIsSending(true);
 
               sendMessage({ message }).finally(() => {
@@ -109,7 +98,6 @@ function App() {
               </Button>
             </XStack>
           </form>
-          {submittedText && <Text mt="$3">You submitted: {submittedText}</Text>}
         </YStack>
       </Authenticated>
     </TamaguiProvider>
