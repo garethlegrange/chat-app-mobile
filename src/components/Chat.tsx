@@ -51,9 +51,16 @@ export function Chat() {
           <YStack width="100%" gap="$2">
             {messages.map((message) => {
               return (
-                <ListItem key={message._id} width="75%" ml={message.sender_type === "client" ? "auto" : 0} background={message.sender_type === "client" ? "$blue4" : "$gray2"} borderRadius="$2" padding="$2">
-                  <Text>{message.content}</Text>
-                </ListItem>
+        <ListItem
+  key={message._id}
+  width="75%"
+  marginLeft={message.sender_type === 'client' ? 'auto' : 0}
+  backgroundColor={message.sender_type === 'client' ? '$blue4' : '$gray2'}
+  padding="$3"
+  borderRadius="$4"
+>
+  <Text>{message.content}</Text>
+</ListItem>
               );
             })}
           </YStack>
