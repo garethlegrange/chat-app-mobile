@@ -1,4 +1,4 @@
-import { SignInButton, SignUpButton, UserButton } from "@clerk/clerk-react";
+import { SignInButton, SignUpButton } from "@clerk/clerk-react";
 import { TamaguiProvider, createTamagui } from "@tamagui/core";
 import { defaultConfig } from "@tamagui/config/v4";
 import { XStack, YStack, Text, Button, H6 } from "tamagui";
@@ -24,7 +24,6 @@ function App() {
           items="center"
           height="100vh"
           width={"100%"}
-          p={24}
         >
           <YStack gap="$3" items="center" p={24}>
             <H6>Welcome to KYC (Know Your Customer) app</H6>
@@ -52,7 +51,6 @@ function App() {
           width={"100%"}
           p={24}
         >
-          Welcome back! <UserButton />
           <Chat />
         </YStack>
       </Authenticated>
