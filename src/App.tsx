@@ -3,8 +3,8 @@ import { TamaguiProvider, createTamagui } from "@tamagui/core";
 import { defaultConfig } from "@tamagui/config/v4";
 import { XStack, YStack, Text, Button, H6, Input } from "tamagui";
 import { Authenticated, Unauthenticated } from "convex/react";
-import { useQuery } from "convex/react";
-import { api } from "../convex/_generated/api";
+// import { useQuery } from "convex/react";
+// import { api } from "../convex/_generated/api";
 import { useState } from "react";
 // import { useMutation } from "convex/react";
 
@@ -19,7 +19,7 @@ declare module "@tamagui/core" {
 }
 
 function App() {
-  const messages = useQuery(api.myFunctions.getMessages);
+  // const messages = useQuery(api.myFunctions.getMessages);
   // const sendMessage = useMutation(api.myFunctions.sendMessage);
   const [message, setMessage] = useState("");
   const [isSending, setIsSending] = useState(false);
@@ -61,7 +61,7 @@ function App() {
           p={24}
         >
           Welcome back! <UserButton />
-          {messages && messages.length > 0 ? (
+          {/* {messages && messages.length > 0 ? (
             <ul className="flex flex-col gap-4">
               {messages.map((message) => (
                 <li key={message._id}>
@@ -71,7 +71,7 @@ function App() {
             </ul>
           ) : (
             <div className="text-center text-gray-500 py-8">No messages</div>
-          )}
+          )} */}
           <form
             style={{ width: "100%" }}
             onSubmit={(e) => {
