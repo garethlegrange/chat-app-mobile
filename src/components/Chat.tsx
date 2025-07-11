@@ -54,10 +54,10 @@ export function Chat() {
         <ListItem
   key={message._id}
   width="75%"
-  marginLeft={message.sender_type === 'client' ? 'auto' : 0}
-  backgroundColor={message.sender_type === 'client' ? '$blue4' : '$gray2'}
-  padding="$3"
-  borderRadius="$4"
+  ml={message.sender_type === 'client' ? 'auto' : 0}
+  // bg={message.sender_type === 'client' ? '$blue4' : '$gray2'}
+  p="$3"
+  // borderRadius="$4"
 >
   <Text>{message.content}</Text>
 </ListItem>
