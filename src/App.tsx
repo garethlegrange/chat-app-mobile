@@ -19,12 +19,7 @@ function App() {
   return (
     <TamaguiProvider config={config}>
       <Unauthenticated>
-        <YStack
-          justify="center"
-          items="center"
-          height="100vh"
-          width={"100%"}
-        >
+        <YStack justify="center" items="center" height="100vh" width={"100%"}>
           <YStack gap="$3" items="center" p={24}>
             <H6>Welcome to KYC (Know Your Customer) app</H6>
             <Text>
@@ -39,6 +34,16 @@ function App() {
                 <Button themeInverse>Sign Up</Button>
               </SignUpButton>
             </XStack>
+            <Text>
+              <a
+                href="https://github.com/garethlegrange/chat-app-mobile"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#0070f3", textDecoration: "underline" }}
+              >
+                View project on GitHub
+              </a>
+            </Text>
           </YStack>
         </YStack>
       </Unauthenticated>
@@ -52,6 +57,17 @@ function App() {
           p={24}
         >
           <Chat />
+
+          <Text>
+            <a
+              href="https://github.com/garethlegrange/chat-app-mobile"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#0070f3", textDecoration: "underline" }}
+            >
+              View project on GitHub
+            </a>
+          </Text>
         </YStack>
       </Authenticated>
     </TamaguiProvider>
