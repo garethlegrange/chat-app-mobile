@@ -51,7 +51,7 @@ export function Chat() {
           <YStack width="100%" gap="$2">
             {messages.map((message) => {
               return (
-                <ListItem key={message._id} rounded="lg" width="75%" ml={message.sender_type === "client" ? "auto" : 0}>
+                <ListItem key={message._id} width="75%" ml={message.sender_type === "client" ? "auto" : 0} background={message.sender_type === "client" ? "$blue4" : "$gray2"} borderRadius="$2" padding="$2">
                   <Text>{message.content}</Text>
                 </ListItem>
               );
